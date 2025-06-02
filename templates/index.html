@@ -1,0 +1,48 @@
+ {% extends "base.html" %}
+
+ {% block content %}
+ <div class="radio-container">
+     <h1>Radionovelas </h1>
+
+    <div class="radio" >
+        <img src="{{ url_for('static', filename='images/radio.png') }}" alt="Radionovelas" class="radio-img">
+
+        <div class="boton-encendido">
+            <audio id="player"></audio>
+            <button id="boton-encender-radio" class="boton-encender-radio">></button>
+        </div>
+        <div class="contenedor-boton-apagar">
+            <button id="boton-apagar-radio" class="boton-apagar-radio">||</button>
+        </div>
+
+         <div class="contenedor-boton-avanzar-capitulos">
+            <button id="boton-adelantar-capitulos" class="boton-avanzar-capitulos">>></button>
+        </div>
+
+           <div class="contenedor-boton-retroceder-capitulos">
+            <button id="boton-retroceder-capitulos" class="boton-avanzar-capitulos"><<</button>
+        </div>
+
+        <div class="contenedor-label-index">
+            <label id="info-capitulo" class="identidicador-de-archivo"></label>
+        </div>
+
+    </div>
+    
+
+  
+
+ </div>
+    
+          <!-- Scripts  direcciones relativas -->
+    <script id="capitulos-data" type="application/json">
+        {{ capitulos|tojson }} 
+
+    </script>
+
+
+    <!-- Scripts  direcciones relativas -->
+     <script 
+        src="{{ url_for('static', filename='js/script.js') }}"></script> 
+
+ {% endblock %}

@@ -1,0 +1,166 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    font-size:18px;
+    margin:0;
+    padding: 10px;
+    height: 100vh; /* altura completa de la ventana */
+    color: #3e2f1c; /* texto marrón oscuro */
+    font-family: 'Georgia', serif;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 2px #333;
+}
+
+.radio-container{/*contenedro de la imagen y boton y h1*/
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* permite que el contenedor ocupe el espacio restante */
+    width:100%;
+    max-width: 600px; /* ancho máximo del contenedor */
+    margin: 0 auto; /* centrar el contenedor */
+    align-items: center; /* centrar el contenido */
+    height: auto;
+   
+}
+
+.radio{/*Contenedor imagen */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    width: 100%;
+    margin:0;
+}
+.radio-img{
+    
+    width: 100%;
+    display: block; /* para que la imagen ocupe todo el ancho del contenedor */
+    height: auto; /* para que la imagen mantenga su proporción */
+}
+
+
+button{
+    font-size: 1.5em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.boton-encendido{
+    position: absolute; /* posicionar el boton en la parte superior */
+    bottom:30%; /* distancia desde la parte superior */
+    left: 18%; /* centrar horizontalmente */
+    transform: translateX(-50%,-50%); /* ajustar el centrado */
+}
+.contenedor-boton-apagar{
+    position: absolute; /* posicionar el boton en la parte superior */
+    bottom:30%; /* distancia desde la parte superior */
+    right:16%; /* centrar horizontalmente */
+    transform: translateX(-50%,-50%); /* ajustar el centrado */
+}
+.contenedor-label-index{
+    position: absolute; /* posicionar el boton en la parte superior */
+    font-weight: bold;
+    top:15%; /* distancia desde la parte superior */
+    left:16%; /* centrar horizontalmente */
+    transform: translateX(-50%,-50%); /* ajustar el centrado */
+}
+.boton-encender-radio{
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #444;
+    background: radial-gradient(circle at 30% 30%, #ddd, #999); /* efecto de luz */
+    box-shadow: 
+        inset -2px -2px 5px rgba(255,255,255,0.4), /* luz interna */
+        inset 2px 2px 5px rgba(0,0,0,0.3),         /* sombra interna */
+        2px 4px 6px rgba(0,0,0,0.5);               /* sombra externa */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.boton-apagar-radio,.boton-avanzar-capitulos,.boton-retroceder-capitulos{
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #444;
+    background: radial-gradient(circle at 30% 30%, #ddd, #999); /* efecto de luz */
+    box-shadow: 
+        inset -2px -2px 5px rgba(255,255,255,0.4), /* luz interna */
+        inset 2px 2px 5px rgba(0,0,0,0.3),         /* sombra interna */
+        2px 4px 6px rgba(0,0,0,0.5);               /* sombra externa */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.contenedor-boton-avanzar-capitulos{
+    position: absolute; /* posicionar el boton en la parte superior */
+    bottom:56%; /* distancia desde la parte superior */
+    right: 13%; /* centrar horizontalmente */
+    transform: translateX(-50%,-50%); /* ajustar el centrado */
+}
+.contenedor-boton-retroceder-capitulos{
+    position: absolute; /* posicionar el boton en la parte superior */
+    bottom:56%; /* distancia desde la parte superior */
+    right:30%; /* centrar horizontalmente */
+    transform: translateX(-50%,-50%); /* ajustar el centrado */
+}
+
+
+.boton-encender-radio,.boton-apagar-radio,.boton-avanzar-capitulos,.boton-retroceder-capitulos:hover {
+    background: radial-gradient(circle at 30% 30%, #eee, #bbb);
+    box-shadow:
+        inset -2px -2px 5px rgba(255,255,255,0.5),
+        inset 2px 2px 5px rgba(0,0,0,0.4),
+        3px 5px 8px rgba(0,0,0,0.6);
+}
+.boton-encender-radio:active,.boton-apagar-radio:active,.boton-avanzar-capitulos:active ,.boton-retroceder-capitulos:active {
+    background: #888;
+    box-shadow:
+        inset 2px 2px 6px rgba(0,0,0,0.6),
+        inset -2px -2px 4px rgba(255,255,255,0.3);
+    transform: translateY(2px); /* efecto de pulsación */
+}
+
+
+footer{
+    position:relative;
+    margin-top: 10px;
+    padding: 10px 10px 10px 10px;
+    background-color:#222;
+    color: #fff;
+    bottom: 0;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3); 
+}
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .boton-encendido{
+    bottom:30%; /* distancia desde la parte superior */
+    left: 12%; /* centrar horizontalmente */
+    transform: translateX(-50%,-50%); /* ajustar el centrado */
+    }
+}

@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> 
+    <title>Radionovelas</title>
+
+    <style>
+        body{
+              background-image: url("{{ url_for('static', filename='images/fondo.png') }}");
+            background-size: cover;            /* para cubrir toda la pantalla */
+            background-repeat: no-repeat;      /* que no se repita */
+            background-attachment: fixed;      /* para que se quede fijo al hacer scroll */
+        }
+    </style>
+</head>
+<body>
+    {% block content %}
+
+
+
+
+
+   
+    {% endblock %}
+    <footer>
+        <p>&copy; 2025 Radionovelas <strong> by Juanmabyte</strong></p>
+        <p>"Para todos aquellos que crecieron escuchando la voz del justiciero Kalimán, este proyecto es un homenaje"</p>
+        <p>Gracias por visitar esta radio dedicada a las grandes radionovelas del pasado</p>
+        <p>Hecho con cariño para los amantes de Kalimán y las hiustorias de antaño</p>
+        <p>{{total_visitas}} </p>
+        </p>
+    </footer>
+
+    
+</body>
+</html>
